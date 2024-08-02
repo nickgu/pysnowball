@@ -5,10 +5,16 @@ from pysnowball import api_ref
 from pysnowball import utls
 
 
+def check_hk(symbol, url):
+    #print('check uk.')
+    if len(symbol) == 5:
+        url = url.replace('/cn/', '/hk/')
+    return url
 
 def cash_flow(symbol, is_annals=0, count=10):
 
     url = api_ref.finance_cash_flow_url+symbol
+    url = check_hk(symbol, url)
     
     if is_annals == 1:
         url = url + '&type=Q4'
@@ -21,6 +27,7 @@ def cash_flow(symbol, is_annals=0, count=10):
 def indicator(symbol, is_annals=0, count=10):
     
     url = api_ref.finance_indicator_url+symbol
+    url = check_hk(symbol, url)
     
     if is_annals == 1:
         url = url + '&type=Q4'
@@ -33,6 +40,7 @@ def indicator(symbol, is_annals=0, count=10):
 def balance(symbol, is_annals=0, count=10):
 
     url = api_ref.finance_balance_url+symbol
+    url = check_hk(symbol, url)
 
     if is_annals == 1:
         url = url + '&type=Q4'
@@ -45,6 +53,7 @@ def balance(symbol, is_annals=0, count=10):
 def income(symbol, is_annals=0, count=10):
     
     url = api_ref.finance_income_url+symbol
+    url = check_hk(symbol, url)
 
     if is_annals == 1:
         url = url + '&type=Q4'
@@ -57,6 +66,7 @@ def income(symbol, is_annals=0, count=10):
 def business(symbol, is_annals=0, count=10):
 
     url = api_ref.finance_business_url+symbol
+    url = check_hk(symbol, url)
 
     if is_annals == 1:
         url = url + '&type=Q4'

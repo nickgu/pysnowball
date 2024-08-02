@@ -75,9 +75,9 @@ def read_install_requires():
 
 setuptools.setup(
     name="pysnowball",
-    version="0.1.3",
-    author="Yang Yu",
-    author_email="yang.lights@hotmail.com",
+    version="0.1.4",
+    author="Yang Yu, Simiu Gu",
+    author_email="yang.lights@hotmail.com, simiu_0609@163.com",
     description="xueqiu api python client | 集成雪球API",
     long_description=long_desc,
     long_description_content_type="text/markdown",
